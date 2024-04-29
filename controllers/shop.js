@@ -11,12 +11,15 @@ const Tour = require("../models/product");
 // };
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render("shop/index", {
-      prods: products,
-      pageTitle: "Shop",
-      path: "/",
-    });
+  res.render("shop/index", {
+    // pageTitle: "Shop",
+    path: "/",
+  });
+};
+exports.getNews = (req, res, next) => {
+  res.render("shop/tin-tuc", {
+    // pageTitle: "Shop",
+    path: "/tin-tuc",
   });
 };
 
@@ -38,7 +41,7 @@ exports.getListTour = (req, res, next) => {
   Tour.fetchAll((tours) => {
     res.render("shop/list-tour", {
       tous: tours,
-      pageTitle: "Shop",
+      pageTitle: "List",
       path: "/list-tour",
     });
   });
